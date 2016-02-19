@@ -1,0 +1,14 @@
+<h1>Tenants#new</h1>
+<p>Find me in app/views/tenants/new.html.erb</p>
+<div class="sign-up-form">
+	<%=form_for @tenant do |f| %>
+	<%=f.text_field :email %>
+	<!-- # , nil, placeholder: 'email') %> -->
+	<!--Add text about password criteria  -->
+	<br>
+	<%=f.password_field :password %>
+	<br>
+	<%=f.submit "Create Account" %>
+	<!-- Or, 'next or continue' which takes user to their profile page for further options to add a photo and view groups! -->
+	<%end%>
+</div>

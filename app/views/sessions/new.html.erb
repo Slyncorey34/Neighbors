@@ -1,0 +1,14 @@
+<!-- Sessions.new.html.erb -->
+<div class="col-md-3">
+	<div class="login-form">
+		<%= form_tag login_path do%>
+		<%= text_field_tag(:email, nil, placeholder: 'email') %>
+		<br>
+		<%= password_field_tag(:password, nil, placeholder: 'password')%>
+		<br>
+		<%=submit_tag "Sign In"%>
+		<%end%>
+		<p>Or, create a <%=link_to "new account", root_path%>.</p>
+	</div>
+</div>
+<!-- Add a 'Forgot Password' link? -->
