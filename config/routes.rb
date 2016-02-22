@@ -7,24 +7,24 @@ Rails.application.routes.draw do
 
   get 'jobs/show'
 
-  get 'jobs/edit'
+  # get 'jobs/edit'
 
-  get 'jobs/update'
+  # get 'jobs/update'
 
-  get 'jobs/destroy'
+  # get 'jobs/destroy'
 
-  get 'unit/index'
+  # get 'unit/index'
 
-  get 'unit/show'
+  # get 'unit/show'
 
-  get 'unit/edit'
+  # get 'unit/edit'
 
-  get 'unit/update'
+  # get 'unit/update'
 
   root 'home#welcome'
 
   get '/login', to: "sessions#new"
-  post '/login', to: "sessions#create"
+  post '/login', to: "home#lobby"
 
   get '/signup', to: "users#new"
   post '/signup', to: "users#show"

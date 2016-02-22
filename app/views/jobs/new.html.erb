@@ -1,2 +1,13 @@
 <h1>Jobs#new</h1>
-<p>Find me in app/views/jobs/new.html.erb</p>
+<p>Submit a maintenance order</p>
+
+<div class="job-order">
+	<%=form_for jobs_new_path do |f|%>
+	<%=f.label :type%>
+	<!--  ADD THE DROPDOWN MENU -->
+	<%=f.text_field :type%>
+	<%=f.label :note%>
+	<%=f.text_field :note%>
+	<%=f.submit 'Submit'%>
+	<%end%>
+</div>
