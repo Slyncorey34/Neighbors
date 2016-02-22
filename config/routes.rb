@@ -1,34 +1,16 @@
 Rails.application.routes.draw do
-  get 'jobs/index'
 
-  get 'jobs/new'
-
-  get 'jobs/create'
-
-  get 'jobs/show'
-
-  # get 'jobs/edit'
-
-  # get 'jobs/update'
-
-  # get 'jobs/destroy'
-
-  # get 'unit/index'
-
-  # get 'unit/show'
-
-  # get 'unit/edit'
-
-  # get 'unit/update'
 
   root 'home#welcome'
 
-  get '/login', to: "sessions#new"
-  post '/login', to: "home#lobby"
 
-  get '/signup', to: "users#new"
-  post '/signup', to: "users#show"
+  get '/login', to: "sessions#new"
+
+  post '/login', to: "home#lobby", as: "lobby"
+
   get '/logout', to: "sessions#destroy"
+
+  post 'jobs/new', to: "jobs#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -44,6 +26,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :users
+    resources :jobs
 
   # Example resource route with options:
   #   resources :products do

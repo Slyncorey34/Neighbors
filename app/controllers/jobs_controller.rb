@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   def index
-    # @jobs = Jobs.all
+      
+     @jobs = Job.all
   end
 
   def new
@@ -11,8 +12,18 @@ class JobsController < ApplicationController
   def create
     @user = current_user
     @job = Job.create(job_params)
-    redirect_to user_path
+    
+
+  # @unit= Unit.find(params[:id])
+  #   @job = @unit.jobs.build(job_params)
+  #   @job.user = current_user
+    if @job.save
+      redirect_to user_path(@user)
+    else 
+        render :new
+    end
   end
+
 
   def show
   end
