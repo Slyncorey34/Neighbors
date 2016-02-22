@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_salt
       
       t.boolean :admin, default: false
+     
       t.timestamps null: false
     end
   end

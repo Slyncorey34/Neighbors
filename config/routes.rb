@@ -1,4 +1,26 @@
 Rails.application.routes.draw do
+  get 'jobs/index'
+
+  get 'jobs/new'
+
+  get 'jobs/create'
+
+  get 'jobs/show'
+
+  get 'jobs/edit'
+
+  get 'jobs/update'
+
+  get 'jobs/destroy'
+
+  get 'unit/index'
+
+  get 'unit/show'
+
+  get 'unit/edit'
+
+  get 'unit/update'
+
   root 'home#welcome'
 
   get '/login', to: "sessions#new"

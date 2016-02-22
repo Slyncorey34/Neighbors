@@ -1,0 +1,24 @@
+<h3>Welcome to the building!</h3>
+<h5>new user sign up</h5>
+
+<div class="sign-up-form">
+	<%=form_for @user do |f| %>
+	<%=f.label :apartment%>
+	<br>
+	<%=f.text_field :unit%>
+	<br>
+	<%=f.label :first_name%>
+	<br>
+	<%=f.text_field :fname%>
+	<br>
+	<%=f.label :email%>
+	<br>
+	<%=f.text_field :email %>
+	<br>
+	<%=f.label :password%>
+	<br>
+	<%=f.password_field :password %>
+	<br>
+	<%=f.submit "Create Account" %>
+	<%end%>
+</div>

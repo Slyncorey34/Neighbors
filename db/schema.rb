@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219203456) do
+ActiveRecord::Schema.define(version: 20160221170614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "type"
+    t.text     "note"
+    t.integer  "unit_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "jobs", ["unit_id"], name: "index_jobs_on_unit_id", using: :btree
+  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -25,6 +37,16 @@ ActiveRecord::Schema.define(version: 20160219203456) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "units", force: :cascade do |t|
+    t.string   "unitname"
+    t.string   "address"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "units", ["user_id"], name: "index_units_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "fname"
@@ -37,5 +59,8 @@ ActiveRecord::Schema.define(version: 20160219203456) do
     t.datetime "updated_at",                    null: false
   end
 
+  add_foreign_key "jobs", "units"
+  add_foreign_key "jobs", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "units", "users"
 end
