@@ -1,6 +1,6 @@
 
 <p>howdy <%=@user.fname%>!</p>
-
+<%#=@user.avatar.url(:thumb)%>
 <h3>What would you like to do?</h3>
 <ul>
 <b>Home Stuff</b>
@@ -16,4 +16,7 @@
 <li><%=link_to 'Make an announcement', new_post_path%></li>
 </ul>
 
-<p><%#=link_to 'Edit your account', edit_user_path%></p>
+<p><%=link_to 'Edit your account', edit_user_path%></p>
+<%=link_to 'Log out', logout_path%>
+<br>
+<%=link_to 'Lobby', lobby_path%>

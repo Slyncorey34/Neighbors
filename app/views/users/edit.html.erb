@@ -11,8 +11,10 @@
 		<%=f.password_field :password%> 
 		<br>
 		
-		<%#= f.file_field :avatar %>
+		<%= f.file_field :avatar %>
 		<%=f.submit "Update"%> 
 		<%end%>
 	</div>
 	<%=link_to "Log Out", logout_path%>
+	<br>
+	<%=link_to "Profile", user_path(@user)%>

@@ -1,5 +1,6 @@
 
-<p>Submit a maintenance order</p>
+<h2>Submit a maintenance order</h2>
+<p>1. Select the type of work your apartment or designated area needs. 2. Describe the job and set the priority. 3. Submit! </p>
 
 <div class="job-order">
 	<%=form_for @job do |f|%>
@@ -8,6 +9,16 @@
 	<%=f.text_field :title%>
 	<%=f.label :note%>
 	<%=f.text_field :note%>
+	<%=f.label :priority%>
+	<%=f.text_field :priority%>
 	<%=f.submit 'Submit' %>
 	<%end%>
+</div>
+<div class="side-menu">
+	<ul>
+		<li>Contact your landlord</li>
+		<li>View previous work orders</li>
+		<li>View building documents</li>
+		<li>Go to the Lobby</li>
+	</ul>
 </div>

@@ -6,12 +6,13 @@ Rails.application.routes.draw do
 
   get '/login', to: "sessions#new"
 
-  post '/login', to: "home#lobby", as: "lobby"
+  post '/login', to: "sessions#create"
 
   get '/logout', to: "sessions#destroy"
 
   get '/profile', to: "users#show" 
   
+  get '/lobby', to: "home#lobby"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -27,8 +28,11 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :users
-    resources :jobs
     resources :posts
+    # resources :units do
+    resources :jobs
+  # end
+
 
   # Example resource route with options:
   #   resources :products do
