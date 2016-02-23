@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   get '/logout', to: "sessions#destroy"
 
-  post 'jobs/new', to: "jobs#index"
+  get '/profile', to: "users#show" 
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :users
     resources :jobs
+    resources :posts
 
   # Example resource route with options:
   #   resources :products do

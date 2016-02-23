@@ -1,2 +1,7 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<p><%=@user.fname%> is signed in</p>
+<br>
+<h2>All Posts</h2>
+<% @posts.each do |post| %>
+<%=post.title%>
+<%=post.body%>
+<%end%>

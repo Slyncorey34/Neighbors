@@ -1,7 +1,7 @@
 class CreateJobs < ActiveRecord::Migration
   def change
     create_table :jobs do |t|
-    t.string :type
+    t.string :title
     t.text	:note
     
     t.references :unit, index: true, foreign_key: true	

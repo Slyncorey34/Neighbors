@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
   def index
+    @user = current_user
     # only accessible if a tenant or admin is logged in
     @posts = Post.all 
   end
 
   def new
+    @user = current_user
     # How to manage people with different privileges posting?
     @post = Post.new
   end
@@ -40,6 +42,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:posts).permit(:title, :body,)
+    params.require(:post).permit(:title, :body,)
   end  
 end

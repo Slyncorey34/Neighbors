@@ -1,5 +1,12 @@
+<p><%#=@user.fname%> is logged in</p>
 <h2>All work requests</h2>
+
 <% @jobs.each do |job|%>
-	<%=job.title%>
-	<%=job.note%>
+	<tr><%=job.title%></tr>
+<br><%=link_to 'Edit', edit_job_path%>
+<tr><%=job.note%></tr>
+<br>
 	<%end%>
+	
+
+	

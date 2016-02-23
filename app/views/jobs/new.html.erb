@@ -1,11 +1,11 @@
-<h1>Jobs#new</h1>
+
 <p>Submit a maintenance order</p>
 
 <div class="job-order">
-	<%=form_for jobs_path do |f|%>
-	<%=f.label :type%>
+	<%=form_for @job do |f|%>
+	<%=f.label :title%>
 	<!--  ADD THE DROPDOWN MENU -->
-	<%=f.text_field :type%>
+	<%=f.text_field :title%>
 	<%=f.label :note%>
 	<%=f.text_field :note%>
 	<%=f.submit 'Submit' %>
