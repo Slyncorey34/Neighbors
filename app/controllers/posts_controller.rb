@@ -1,27 +1,32 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all 
-    @user = current_user
   end
 
   def new
+    @user = current_user
+   
     @post = Post.new
   end
 
   def create
-    @post = Post.new(params[:post].permit(:title,:body))
-    @post.save
+    @post = Post.new(post_params)
+    @post.user = current_user
+    if @post.save
     redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def edit
-    @post= Post.find(params[:post_id])
+    @post= Post.find_by(params[:user_id])
  end
 
   def update
     @post = Post.find(params[:post_id])
     if post.update(params_params)
-      post.save
+      @post.save
       redirect_to post_path
     else
       flash[:alert] = "whoops, try again"
@@ -29,8 +34,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    # @user = current_user
-    @post = Post.find(params[:id])
+
+    @post = Post.find_by(params[:user_id])
   end
 
   def destroy
