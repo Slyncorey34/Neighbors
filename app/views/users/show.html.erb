@@ -1,2 +1,21 @@
-<h1>Tenants#show</h1>
-<p>Find me in app/views/tenants/show.html.erb</p>
+<p>howdy <%= @user.fname %>!</p>
+<%#=@user.avatar.url(:thumb)%>
+<h3>What would you like to do?</h3>
+<ul>
+<b>Home Stuff</b>
+<li>Pay rent</li>
+<li><%=link_to 'Submit a maintenance request', new_user_unit_job_path(@user.id, @unit.id) %></li>
+
+<li>View building documents and resources</li>
+<br>
+
+<b>Community Stuff</b>
+<li>Message a Neighbor</li>
+<li>Add guests and pets</li>
+<li><%=link_to 'Make an announcement', new_post_path%></li>
+</ul>
+
+<p><%=link_to 'Edit your account', edit_user_path%></p>
+<%=link_to 'Log out', logout_path%>
+<br>
+<%=link_to 'Lobby', lobby_path%>

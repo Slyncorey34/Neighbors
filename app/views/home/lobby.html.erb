@@ -1,0 +1,21 @@
+<h2>This is the lobby</h2>
+<!-- Show avatar here instead of name, click to see user show page -->
+<p>welcome <%=@user.fname%></p>
+<%=link_to 'Profile', user_path(@user) %>
+<ul>
+	<li>Current Work</li>
+	<li>Planned work</li>
+	<li>Events Calendar</li>
+	<li>Bulletin Board</li>
+</ul>
+
+<div class="lobby-work">
+	</div>
+	<div class="lobby-posts">
+		<%#= render 'post/index'%>
+		<%# @post.each do |post|%>
+		<%#=post.title%>
+		<%#=post.body%>
+		<%#end%>
+	</div>
+

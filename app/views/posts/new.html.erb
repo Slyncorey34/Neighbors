@@ -1,9 +1,12 @@
-<h1>Posts#new</h1>
-<p>Add a link</p>
+<p><%=@user.fname%> is signed in</p>
+<p>Add a note to the public lobby</p>
 <%=form_for(@post) do|f|%>
 <%=f.label :title%>
 <%=f.text_field :title%>
-<%=f.label :link%>
-<%=f.text_field :link%>
+<%=f.label :body%>
+<%=f.text_field :body%>
 <%=f.submit%>
 <%end%>
+
+<p>Or, <%#=link_to 'x', _lobby_path%></p>
+<!-- linkto partial lobby view -->

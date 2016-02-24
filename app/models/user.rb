@@ -1,7 +1,9 @@
 class User <ActiveRecord::Base
 	has_many :posts
-	has_many :jobs, through: :unit
+	has_many :jobs
 	has_one :unit
+    # has_attached_file :avatar, :styles => { :thumb => "60x60>" }, :default_url => "/images/:style/missing.png" 
+    # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 	attr_accessor :password
 
 	before_save :encrypt_password

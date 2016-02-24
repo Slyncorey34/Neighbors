@@ -1,3 +1,4 @@
 class Job <ActiveRecord::Base
-	belongs_to :units through: :users
+	belongs_to :unit 
+	belongs_to :user
 end

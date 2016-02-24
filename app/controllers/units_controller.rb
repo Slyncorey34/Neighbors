@@ -1,17 +1,17 @@
 class UnitsController < ApplicationController
   def index
+    @units = Unit.all
   end
 
   def show
   end
 
   def new
-  	@unit = Unit.find(params[:id])
+  	@unit = Unit.new(unit_params)
   	@user = current_user
   end
 
   def create
-  	# ADD fixed number of apartments and details as seeds, like Voter app
   end
 
   def edit

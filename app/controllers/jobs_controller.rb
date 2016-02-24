@@ -1,22 +1,54 @@
 class JobsController < ApplicationController
   def index
+      # ONLY SHOW JOBS OF THE CURRENT USER 
+     @jobs = Jobs.all 
   end
 
   def new
+    # @unit = Unit.find(params[:id])
+    # @job = Job.new
+
+    @jobs = current_user.jobs
+     @job = current_user.jobs.new
   end
 
   def create
+    @unit = Unit.find(params[:id])
+    @job = @unit.jobs.build(jobs_params)
+    @job.user = current_user
+    if @job.save
+      redirect_to user_path(@user)
+    else 
+        render :new
+    end
   end
+
 
   def show
+    @job = Job.find(params[:id])
   end
 
-  def edit
-  end
+ def edit
+  @job = Job.find(params[:id])
+end
 
-  def update
-  end
+def update
+  @job = Job.find(params[:id])
+  if @job.update_attributes(job_params)
+ 
+    p @job.user
+    redirect_to job_path(@job)
+  else
+    p @job.user
+    render :edit
+  end 
+end
 
   def destroy
+  end
+
+  private
+  def job_params
+    params.require(:job).permit(:title, :note, :priority)
   end
 end

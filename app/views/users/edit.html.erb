@@ -1,2 +1,20 @@
-<h1>Tenants#edit</h1>
-<p>Find me in app/views/tenants/edit.html.erb</p>
+<p>Edit Your Profile</p>
+<div class="sign-up-form">
+		<%=form_for @user, method: :patch do |f|%>	
+		<%=f.label :first_name %>
+		<%=f.text_field :fname%>
+		<br>
+		<%=f.label :email%>
+		<%=f.text_field :email%>
+		<br>
+		<%=f.label :password%>
+		<%=f.password_field :password%> 
+		<br>
+		
+		<%= f.file_field :avatar %>
+		<%=f.submit "Update"%> 
+		<%end%>
+	</div>
+	<%=link_to "Log Out", logout_path%>
+	<br>
+	<%=link_to "Profile", user_path(@user)%>

@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   end
 
   def lobby
+  	
   end
   
   def contact
