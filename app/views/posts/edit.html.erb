@@ -1,4 +1,4 @@
-<p>Edit this post</p>
+<p>Edit your post and click update</p>
 <%=form_for @post do |f|%>	
 		<%=f.label :title %>
 		<%=f.text_field :title%>
@@ -8,3 +8,4 @@
 		<br>
 		<%=f.submit "Update"%> 
 		<%end%>
+<%= link_to 'Back', posts_path(@user)%>

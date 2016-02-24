@@ -5,7 +5,7 @@
 	<%=form_for @user do |f| %>
 	<%=f.label :apartment%>
 	<br>
-	<%=f.text_field :unitname%>
+	<%#=f.text_field :unitname%>
 	<br>
 	<%=f.label :first_name%>
 	<br>
@@ -19,6 +19,7 @@
 	<br>
 	<%=f.password_field :password %>
 	<br>
+	<%=f.file_field :avatar%>
 	<%=f.submit "Create Account" %>
 	<%end%>
 </div>
