@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all 
   end
 
   def new
@@ -10,15 +9,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else render 'new'
     end
   end
 
   def show
-    @user = User.find(params[:id])
-
+    @user = current_user
+    @unit = Unit.find_by(params[:user_id])
   end
 
   def edit
@@ -27,14 +25,14 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-   @user.update_attributes(user_params)
+    @user.update_attributes(user_params)
     redirect_to user_path(@user)
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to user_path
+    redirect_to '/'
   end
 
   private

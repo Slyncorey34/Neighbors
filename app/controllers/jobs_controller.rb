@@ -1,15 +1,20 @@
 class JobsController < ApplicationController
   def index
       # ONLY SHOW JOBS OF THE CURRENT USER 
-     @jobs = Job.all
+     @jobs = Jobs.all 
   end
 
   def new
-    @job = Job.new
+    # @unit = Unit.find(params[:id])
+    # @job = Job.new
+
+    @jobs = current_user.jobs
+     @job = current_user.jobs.new
   end
 
   def create
-    @job = Job.new(job_params)
+    @unit = Unit.find(params[:id])
+    @job = @unit.jobs.build(jobs_params)
     @job.user = current_user
     if @job.save
       redirect_to user_path(@user)
@@ -44,6 +49,6 @@ end
 
   private
   def job_params
-    params.require(:job).permit(:title, :note)
+    params.require(:job).permit(:title, :note, :priority)
   end
 end

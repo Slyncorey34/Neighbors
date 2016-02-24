@@ -4,9 +4,10 @@
 
 <div class="job-order">
 	<%=form_for @job do |f|%>
-	<%=f.label :title%>
-	<!--  ADD THE DROPDOWN MENU -->
-	<%=f.text_field :title%>
+	<%=f.label :type%>
+	<%= f.select :title,["Electrical","HVAC","Plumbing","Other"], prompt: :select %>
+
+	<%#=f.text_field :title%>
 	<%=f.label :note%>
 	<%=f.text_field :note%>
 	<%=f.label :priority%>
@@ -17,8 +18,8 @@
 <div class="side-menu">
 	<ul>
 		<li>Contact your landlord</li>
-		<li>View previous work orders</li>
+		<li><%=link_to 'View previous work orders', jobs_path%></li>
 		<li>View building documents</li>
-		<li>Go to the Lobby</li>
+		<li><%=link_to 'Go to the Lobby', lobby_path%></li>
 	</ul>
 </div>

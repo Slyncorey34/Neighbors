@@ -1,11 +1,10 @@
-
-<p>howdy <%=@user.fname%>!</p>
+<p>howdy <%= @user.fname %>!</p>
 <%#=@user.avatar.url(:thumb)%>
 <h3>What would you like to do?</h3>
 <ul>
 <b>Home Stuff</b>
 <li>Pay rent</li>
-<li><%=link_to 'Submit a maintenance request', new_job_path%></li>
+<li><%=link_to 'Submit a maintenance request', new_user_unit_job_path(@user.id, @unit.id) %></li>
 
 <li>View building documents and resources</li>
 <br>

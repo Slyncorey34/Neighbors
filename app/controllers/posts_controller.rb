@@ -1,18 +1,16 @@
 class PostsController < ApplicationController
   def index
-    @user = current_user
-    # only accessible if a tenant or admin is logged in
     @posts = Post.all 
+    @user = current_user
   end
 
   def new
-    @user = current_user
-    # How to manage people with different privileges posting?
     @post = Post.new
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(params[:post].permit(:title,:body))
+    @post.save
     redirect_to posts_path
   end
 
@@ -31,11 +29,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:post_id])
+    # @user = current_user
+    @post = Post.find(params[:id])
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
     @post.destroy
     redirect_to tenant_path
   end

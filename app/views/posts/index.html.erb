@@ -1,7 +1,8 @@
-<p><%=@user.fname%> is signed in</p>
+<p><%=@user%> is signed in</p>
 <br>
 <h2>All Posts</h2>
 <% @posts.each do |post| %>
-<%=post.title%>
+<%=post.title%><br>
 <%=post.body%>
+<br>
 <%end%>
