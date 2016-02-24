@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @user = current_user
     @posts = Post.all 
   end
 
@@ -20,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post= Post.find_by(params[:user_id])
+    @post = Post.find(params[:id])
  end
 
   def update
