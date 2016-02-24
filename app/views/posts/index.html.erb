@@ -4,7 +4,7 @@
 <% @posts.each do |post| %>
 <%=post.title%>
 
-<%= l Time.now, :format => "%m-d-%Y"%>
+<%= l Time.now, :format => "%m-%d-%Y"%>
 <%= link_to 'view post', post_path(post) %>
 <br>
 <%end%>

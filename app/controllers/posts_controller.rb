@@ -25,12 +25,12 @@ class PostsController < ApplicationController
  end
 
   def update
-    @post = Post.find(params[:post_id])
-    if post.update(params_params)
-      @post.save
-      redirect_to post_path
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      
+      redirect_to post_path(@post)
     else
-      flash[:alert] = "whoops, try again"
+      render :edit
     end
   end
 
