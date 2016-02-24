@@ -1,15 +1,10 @@
 class JobsController < ApplicationController
   def index
-      # ONLY SHOW JOBS OF THE CURRENT USER 
-     @jobs = Jobs.all 
+    @jobs = Job.all 
   end
 
   def new
-    # @unit = Unit.find(params[:id])
-    # @job = Job.new
-
-    @jobs = current_user.jobs
-     @job = current_user.jobs.new
+    @job = Job.new
   end
 
   def create
@@ -25,7 +20,8 @@ class JobsController < ApplicationController
 
 
   def show
-    @job = Job.find(params[:id])
+    @user = current_user
+    @job = Job.find_by(params[:user_id])
   end
 
  def edit
