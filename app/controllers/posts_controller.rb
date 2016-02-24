@@ -36,13 +36,13 @@ class PostsController < ApplicationController
 
   def show
 
-    @post = Post.find_by(params[:user_id])
+    @post = Post.find(params[:id])
   end
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to tenant_path
+    @post.delete
+    redirect_to posts_path
   end
 
   private
