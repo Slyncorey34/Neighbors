@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   end
 
   def new
-    @user = current_user
+    @user = User.find(params[:user_id])
     @job = Job.new
   end
 

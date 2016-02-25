@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     @unit = Unit.find_by(params[:user_id])
   end
 
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:fname, :email, :password, :unitname, :avatar)
+    params.require(:user).permit(:fname, :email, :password, :apt, :avatar)
   end
 
 end
