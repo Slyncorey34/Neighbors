@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @user = current_user
     @posts = Post.all 
   end
 
@@ -20,28 +21,28 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post= Post.find_by(params[:user_id])
+    @post = Post.find(params[:id])
  end
 
   def update
-    @post = Post.find(params[:post_id])
-    if post.update(params_params)
-      @post.save
-      redirect_to post_path
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      
+      redirect_to post_path(@post)
     else
-      flash[:alert] = "whoops, try again"
+      render :edit
     end
   end
 
   def show
 
-    @post = Post.find_by(params[:user_id])
+    @post = Post.find(params[:id])
   end
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to tenant_path
+    @post.delete
+    redirect_to posts_path
   end
 
   private

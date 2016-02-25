@@ -1,9 +1,10 @@
-<p><%#=@user.fname%> is signed in</p>
+<p><%=@user.fname%> is signed in</p>
 <br>
 <h2>All Posts</h2>
 <% @posts.each do |post| %>
-<%=post.title%><br>
-<%#=link_to 'Edit', edit_user_unit_job_path%>
-<%=post.body%>
+<%=post.title%>
+
+<%= l Time.now, :format => "%m-%d-%Y"%>
+<%= link_to 'view post', post_path(post) %>
 <br>
 <%end%>
