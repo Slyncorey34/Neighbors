@@ -1,7 +1,8 @@
-<p>Your Messages</p>
+<p>Edit or Delete this post. View the full bulletin board in the lobby.</p>
 <!-- Show the body, title, and datecreated of a selected post -->
 <%= @post.title%>
 <%= @post.body%>
 <%= l Time.now, :format => "%m-%d-%Y"%>
 <%= link_to 'edit post', edit_post_path, method: :edit%>
 <%= link_to 'delete post', post_path, method: :delete%>
+<%= link_to 'Back', :back%>

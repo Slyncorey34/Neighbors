@@ -1,5 +1,12 @@
 <p>Edit Your Profile</p>
-<div class="sign-up-form">
+<%=image_tag @user.avatar.url(:medium) %>
+<%#=form_for @user, method: :patch do |f| %>
+<%#=f.label :change_photo%>
+<%#=f.file_field :avatar%>
+<%#=f.submit%>
+<%#end%>
+
+<div class="update-form">
 		<%=form_for @user, method: :patch do |f|%>	
 		<%=f.label :first_name %>
 		<%=f.text_field :fname%>
@@ -11,7 +18,7 @@
 		<%=f.password_field :password%> 
 		<br>
 		
-		<%= f.file_field :avatar %>
+		<%= f.select :apt,["1a","1b"], promtp: :select %>
 		<%=f.submit "Update"%> 
 		<%end%>
 	</div>

@@ -5,7 +5,8 @@
 	<%=form_for @user do |f| %>
 	<%=f.label :apartment%>
 	<br>
-	<%=f.text_field :unitname%>
+	<%= f.select :apt,["1a","1b","4d"], prompt: :select %>
+
 	<br>
 	<%=f.label :first_name%>
 	<br>
@@ -19,6 +20,8 @@
 	<br>
 	<%=f.password_field :password %>
 	<br>
+	<%=f.label :Your_photo%><p>(optional)</p>
+	<%=f.file_field :avatar%>
 	<%=f.submit "Create Account" %>
 	<%end%>
 </div>

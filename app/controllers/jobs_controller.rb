@@ -1,20 +1,20 @@
 class JobsController < ApplicationController
   def index
-    # @user = current_user
+    @user = current_user
     @jobs = Job.all 
   end
 
   def new
-    @user = current_user
+    @user = User.find(params[:user_id])
     @job = Job.new
   end
 
   def create
-    @unit = Unit.find(params[:id])
-    @job = @unit.jobs.build(jobs_params)
-    @job.user = current_user
+    @unit = Unit.find(params[:unit_id])
+    @job = @unit.jobs.build(job_params)
+    @job.user_id = params[:user_id]
     if @job.save
-      redirect_to user_path(@user)
+      redirect_to user_unit_jobs_path(@job.user_id,@job.unit_id)
     else 
         render :new
     end
@@ -27,7 +27,7 @@ class JobsController < ApplicationController
   end
 
  def edit
-  @job = Job.find(params[:id])
+  @job = Job.where(params[:job_id])
 end
 
 def update

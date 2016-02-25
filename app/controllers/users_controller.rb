@@ -9,14 +9,20 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      puts "saved"
+      @unit = Unit.where(unitname:@user.apt).first
+      @unit.user_id = @user.id
+      puts 'set id'
+      @unit.save  
+      session[:user_id]=@user.id  
       redirect_to user_path(@user)
     else render 'new'
     end
   end
 
   def show
-    @user = current_user
-    @unit = Unit.find_by(params[:user_id])
+    @user = User.find(params[:id])
+    @unit = Unit.find(@user.unit.id)
   end
 
   def edit
@@ -37,7 +43,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:fname, :email, :password, :unitname)
+    params.require(:user).permit(:fname, :email, :password, :apt, :avatar)
   end
 
 end
