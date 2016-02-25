@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   end
 
   def lobby
-  	# NEED TO DEFINE USER HERE?
+  	@user = current_user
   end
   
   def contact

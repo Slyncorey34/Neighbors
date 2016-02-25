@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   
   get '/lobby', to: "home#lobby"
 
-  post '/jobs', to: "jobs#index"
+  # post '/jobs', to: "jobs#index"
 
   post "posts/:id/edit", to: "posts#edit"
 
@@ -34,10 +34,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :users do
         resources :units do 
-        resources :jobs
-        
-      end  
-      end
+          resources :jobs
+        end  
+    end
       resources :posts
 
 
