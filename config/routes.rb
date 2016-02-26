@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   
   get '/lobby', to: "home#lobby"
 
-  # post '/jobs', to: "jobs#index"
-
   post "posts/:id/edit", to: "posts#edit"
 
   

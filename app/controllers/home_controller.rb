@@ -12,4 +12,7 @@ class HomeController < ApplicationController
 
   def faq
   end
+
+  def docs
+  end
 end

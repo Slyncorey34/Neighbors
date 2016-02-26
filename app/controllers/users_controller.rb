@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @user = User.all 
   end
 
   def new
@@ -25,9 +26,9 @@ class UsersController < ApplicationController
     if @user.admin == 'false'
     @unit = Unit.find(@user.unit.id)
     redirect_to lobby_path
-  else
+    else
     render 'users/admin'
-  end
+    end
   end
 
   def edit
