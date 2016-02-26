@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 
   def lobby
   	@user = current_user
+  	@post = Post.all
   end
   
   def contact

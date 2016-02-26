@@ -12,10 +12,11 @@
 <div class="lobby-work">
 	</div>
 	<div class="lobby-posts">
-		<%#= render 'post/index'%>
-		<%# @post.each do |post|%>
-		<%#=post.title%>
-		<%#=post.body%>
-		<%#end%>
+	
+		<% @post.each do |post|%>
+		<%=post.title%>
+		(<%=post.user.fname%>)
+		<br>
+		<%end%>
 	</div>
-
+<%=link_to 'Log out', logout_path%>
