@@ -4,6 +4,7 @@
 
 <div class="job-order">
 	<%=form_for [current_user,@unit,@job], url: user_unit_jobs_path do |f|%>
+	<!-- users/:user_id/units/:unit_id/jobs/new(.:format) -->
 	<%=f.label :type%>
 	<%= f.select :title,["Electrical","HVAC","Plumbing","Other"], prompt: :select %>
 

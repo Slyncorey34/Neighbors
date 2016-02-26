@@ -1,7 +1,8 @@
 class JobsController < ApplicationController
   def index
     @user = current_user
-    @jobs = Job.all 
+    # @jobs = Job.all 
+    @jobs = current_user.jobs
     # ONLY SHOW JOBS OF THE CURRENT USER
   end
 
@@ -46,7 +47,8 @@ end
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    redirect_to root_path
+    redirect_to user_unit_jobs_path
+    flash[:notice] = "Your maintenance order has been cancelled."
     # /users/:user_id/units/:unit_id/jobs(.:format) 
     # /users/:user_id/units/:unit_id/jobs/:id(.:format) 
   end
