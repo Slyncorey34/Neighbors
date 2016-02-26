@@ -8,16 +8,7 @@ class UnitsController < ApplicationController
     @user = current_user
     if @user.admin == 'true'
     @unit = Unit.find(params[:id])
-    respond_to do |format|
-    format.html
-    format.pdf do
-      render :pdf         => "file_name",
-             :layout      => "/layouts/lease_layout.html.erb"
     end
-    end
-    end
-  else
-    flash[:alert] = "You do not have privileges to see this apartment."
   end
 
   def new

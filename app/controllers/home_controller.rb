@@ -14,5 +14,12 @@ class HomeController < ApplicationController
   end
 
   def docs
+    # respond_to do |format|
+    # format.html
+    # format.pdf do
+    #   render :pdf         => "file_name",
+    #          :layout      => "/layouts/print_layout.html.erb"
+    # end
+    # end
   end
 end

@@ -32,7 +32,7 @@ body {
 .jumbotron {
 	
 	background-position: center;
-	background-image: url("../assets/apts.jpg");
+	// background-image: url("../assets/apts.jpg");
 	background-repeat: no-repeat;
 	height: 70vh;
 	text-align: center;
@@ -44,45 +44,42 @@ body {
 	font-weight: bold;
 }
 
-.sign-up-form {
+.form {
 	width: 40%;
-	height: 170px;
+	height: 300px;
 	margin: 40px auto;
 }
-.sign-up-form input {
+.form input {
 	height: 30px;
 	width: 200px;
 	margin: 12px;
 }
 
-.login-form {
-	width: 40%;
-	height: 170px;
-	margin: 40px auto;
-}
+// .login-form {
+// 	width: 40%;
+// 	height: 170px;
+// 	margin: 40px auto;
+// }
 
-.login-form input {
-	height: 30px;
-	width: 200px;
-	margin: 12px;
-}
+// .login-form input {
+// 	height: 30px;
+// 	width: 200px;
+// 	margin: 12px;
+// }
 
 h2 {
 	font-weight: bolder;	
 }
 
-
-
-
-.footer li{
-	padding-top: 20px;
-	list-style-type: none;
-	display: inline-block;
-	font-weight: bold;
-	margin-left: 20%;
-	list-style-position: center;
-}
-.footer {
-	background-color: #333333;
-	color: darkgrey;
-}
+// .footer li{
+// 	padding-top: 20px;
+// 	list-style-type: none;
+// 	display: inline-block;
+// 	font-weight: bold;
+// 	margin-left: 20%;
+// 	list-style-position: center;
+// }
+// .footer {
+// 	background-color: #333333;
+// 	color: darkgrey;
+// }

@@ -1,5 +1,4 @@
-<p>All tenants</p>
-<%=current_user.fname%>
+
 <% if admin?%>
 <%@user.each do|user|%>
 <%=user.apt%>
@@ -15,7 +14,8 @@
 <br>
 <%end%>
 <br>
-<%=link_to 'log out', logout_path%>
+<%#=link_to 'log out', logout_path%>
 <%else%>
-<p>Help</p>	
+<p><%=current_user.fname%>, why you snoopin?</p>	
 <%end%>
+<%=link_to 'log out', logout_path%>
