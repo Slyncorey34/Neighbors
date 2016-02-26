@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
   	@user = User.authenticate(params[:email], params[:password])
-  	if @user   		
+  	if @user  		
   		session[:user_id] = @user.id
   		redirect_to user_path(@user)
   	else
@@ -19,3 +19,12 @@ class SessionsController < ApplicationController
   	redirect_to '/'
   end
 end
+    # if user admin value equals false,
+      # if @user.admin = 'false'
+      # find user's unitid,
+    # @user = User.find(params[:id])
+    # if @user.admin == 'false'
+    # @unit = Unit.find(@user.unit.id)
+  #    redirect_to lobby_path
+  #    else redirect_to posts_path
+  # end
