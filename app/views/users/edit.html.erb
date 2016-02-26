@@ -1,10 +1,10 @@
 <p>Edit Your Profile</p>
 <%=image_tag @user.avatar.url(:medium) %>
-<%#=form_for @user, method: :patch do |f| %>
-<%#=f.label :change_photo%>
-<%#=f.file_field :avatar%>
-<%#=f.submit%>
-<%#end%>
+<%=form_for @user, method: :patch do |f| %>
+<%=f.label :change_photo%>
+<%=f.file_field :avatar%>
+<%=f.submit "Update photo"%>
+<%end%>
 
 <div class="update-form">
 		<%=form_for @user, method: :patch do |f|%>	
@@ -17,8 +17,6 @@
 		<%=f.label :password%>
 		<%=f.password_field :password%> 
 		<br>
-		
-		<%= f.select :apt,["1a","1b"], promtp: :select %>
 		<%=f.submit "Update"%> 
 		<%end%>
 	</div>

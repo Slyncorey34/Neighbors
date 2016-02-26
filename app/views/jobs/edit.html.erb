@@ -1,2 +1,18 @@
-<h1>Jobs#edit</h1>
-<p>Find me in app/views/jobs/edit.html.erb</p>
+<p>update your work order</p>
+<div class="update-form">
+		<%=form_for [@job.user, @job.unit, @job] do |f|%>	
+		<%=f.label :type%>
+	<%= f.select :title,["Electrical","HVAC","Plumbing","Other"], prompt: :select %>
+
+	<%=f.label :note%>
+	<%=f.text_field :note%>
+	<%=f.label :priority%>
+	<%=f.text_field :priority%>
+	<%=f.submit 'Submit' %>
+	<%end%>
+	<%=link_to 'Delete this request', user_unit_job_path(@job.user_id,@job.unit_id,@job.id), method: :delete%>	
+	</div>
+
+	<%=link_to "Log Out", logout_path%>
+	<br>
+	<%=link_to "Profile", user_path(current_user)%>
