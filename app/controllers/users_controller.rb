@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.admin == false
     @unit = Unit.find(@user.unit.id)
-    redirect_to lobby_path
+    # redirect_to lobby_path
     else
     render 'users/admin'
     end
