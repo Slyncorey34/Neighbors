@@ -40,6 +40,7 @@ Rails.application.routes.draw do
         end  
     end
       resources :posts
+      resources :charges
 
 
   # Example resource route with options:
