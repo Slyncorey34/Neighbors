@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'charges/new'
+
+  get 'charges/create'
+
   root 'home#welcome'
 
 
@@ -13,8 +17,6 @@ Rails.application.routes.draw do
   get '/profile', to: "users#show" 
   
   get '/lobby', to: "home#lobby"
-
-  # post '/jobs', to: "jobs#index"
 
   post "posts/:id/edit", to: "posts#edit"
 
@@ -38,6 +40,7 @@ Rails.application.routes.draw do
         end  
     end
       resources :posts
+      resources :charges
 
 
   # Example resource route with options:

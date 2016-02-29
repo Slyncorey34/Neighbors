@@ -1,6 +1,6 @@
 <p><%=@user.fname%> is signed in</p>
 <br>
-<h2>All Posts</h2>
+<h2>All (your) Posts</h2>
 <% @posts.each do |post| %>
 <%=post.title%>
 
@@ -10,3 +10,7 @@
 <%end%>
 <%= link_to 'Lobby', lobby_path%>
 <!-- contact the landlord/place a work order/view bldg docs/visit the lobby -->
+<br>
+<%=link_to "Log Out", logout_path%>
+	<br>
+	<%=link_to "Profile", user_path(current_user)%>

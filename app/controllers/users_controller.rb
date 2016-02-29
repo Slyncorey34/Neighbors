@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @user = User.all 
   end
 
   def new
@@ -22,9 +23,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user.admin == false
     @unit = Unit.find(@user.unit.id)
+    # redirect_to lobby_path
+    else
+    render 'users/admin'
+    end
   end
-
   def edit
     @user = User.find(params[:id])
   end

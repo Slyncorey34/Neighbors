@@ -1,2 +1,21 @@
-<h1>Tenants#index</h1>
-<p>Find me in app/views/tenants/index.html.erb</p>
+
+<% if admin?%>
+<%@user.each do|user|%>
+<%=user.apt%>
+<%=user.fname%>
+<%=link_to 'View', user_unit_path(user.id,user.apt)%>
+
+
+
+
+<!-- /users/:user_id/units/:id(.:format -->
+<!-- new_user_unit_job_path(@user.id, @user.unit.id) -->
+<!-- /users/:user_id/units/:id(.:format -->
+<br>
+<%end%>
+<br>
+<%#=link_to 'log out', logout_path%>
+<%else%>
+<p><%=current_user.fname%>, why you snoopin?</p>	
+<%end%>
+<%=link_to 'log out', logout_path%>

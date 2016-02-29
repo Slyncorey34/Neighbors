@@ -1,7 +1,9 @@
 class JobsController < ApplicationController
   def index
     @user = current_user
-    @jobs = Job.all 
+    # @jobs = Job.all 
+    @jobs = current_user.jobs
+    # ONLY SHOW JOBS OF THE CURRENT USER
   end
 
   def new
@@ -23,19 +25,19 @@ class JobsController < ApplicationController
 
   def show
     @user = current_user
-    @job = Job.find_by(params[:user_id])
+    @job = Job.find(params[:id])
   end
 
  def edit
-  @job = Job.where(params[:job_id])
+  @job = Job.find(params[:id])
 end
 
 def update
   @job = Job.find(params[:id])
   if @job.update_attributes(job_params)
- 
     p @job.user
-    redirect_to job_path(@job)
+    redirect_to user_unit_jobs_path(@job.user_id,@job.unit_id)
+    # /users/:user_id/units/:unit_id/jobs(.:format) 
   else
     p @job.user
     render :edit
@@ -43,6 +45,12 @@ def update
 end
 
   def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to user_unit_jobs_path
+    flash[:notice] = "Your maintenance order has been cancelled."
+    # /users/:user_id/units/:unit_id/jobs(.:format) 
+    # /users/:user_id/units/:unit_id/jobs/:id(.:format) 
   end
 
   private

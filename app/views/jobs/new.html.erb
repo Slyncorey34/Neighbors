@@ -2,7 +2,7 @@
 <h2>Submit a maintenance order</h2>
 <p>1. Select the type of work your apartment or designated area needs. 2. Describe the job and set the priority. 3. Submit! </p>
 
-<div class="job-order">
+<div class="form">
 	<%=form_for [current_user,@unit,@job], url: user_unit_jobs_path do |f|%>
 	<%=f.label :type%>
 	<%= f.select :title,["Electrical","HVAC","Plumbing","Other"], prompt: :select %>

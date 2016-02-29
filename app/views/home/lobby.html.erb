@@ -1,7 +1,7 @@
 <h2>This is the lobby</h2>
 <!-- Show avatar here instead of name, click to see user show page -->
-<p>welcome <%=@user.fname%></p>
-<%=link_to 'Profile', user_path(@user) %>
+<p>welcome <%=current_user.fname%></p>
+<%=link_to 'Profile', user_path(current_user.id) %>
 <ul>
 	<li>Current Work</li>
 	<li>Planned work</li>
@@ -12,10 +12,12 @@
 <div class="lobby-work">
 	</div>
 	<div class="lobby-posts">
-		<%#= render 'post/index'%>
-		<%# @post.each do |post|%>
-		<%#=post.title%>
-		<%#=post.body%>
-		<%#end%>
+	
+		<% @post.each do |post|%>
+		<%=post.title%>
+		(<%=post.user.fname%>)
+		<br>
+		<%end%>
 	</div>
-
+<%#=link_to 'Documents', docs_path%>
+<%=link_to 'Log out', logout_path%>
