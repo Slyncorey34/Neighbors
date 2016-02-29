@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'charges/new'
+
+  get 'charges/create'
+
   root 'home#welcome'
 
 
