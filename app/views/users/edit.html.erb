@@ -1,12 +1,26 @@
-<p>Edit Your Profile</p>
-<%=image_tag @user.avatar.url(:medium) %>
-<%=form_for @user, method: :patch do |f| %>
-<%=f.label :change_photo%>
-<%=f.file_field :avatar%>
-<%=f.submit "Update photo"%>
-<%end%>
-
-<div class="update-form">
+<nav id="navbar">
+	<ul id="ul_navbar">
+		<div id="nav_avatar">
+	 		<li>Stooper</li>
+	 	</div>
+	 	<!-- <li>Stooper</li> -->
+	</ul>
+</nav>
+<div class="user_edit">
+	<div id="fields_top">
+			<p>Update your public profile.</p>
+		</div>
+	<div id="user_avatar">
+		<%=image_tag @user.avatar.url(:medium) %>
+		</div>
+		<div id="avatar_update">
+		<%=form_for @user, method: :patch do |f| %>
+		<%=f.label :change_photo%>
+		<%=f.file_field :avatar%>
+		<%=f.submit "Upload new photo"%>
+		<%end%>
+		</div>
+		<div id="user_fields">
 		<%=form_for @user, method: :patch do |f|%>	
 		<%=f.label :first_name %>
 		<%=f.text_field :fname%>
@@ -17,9 +31,11 @@
 		<%=f.label :password%>
 		<%=f.password_field :password%> 
 		<br>
-		<%=f.submit "Update"%> 
+		<%=f.submit "Save"%> 
 		<%end%>
 	</div>
+</div>
+	<br>
 	<%=link_to "Log Out", logout_path%>
 	<br>
 	<%=link_to "Profile", user_path(@user)%>
