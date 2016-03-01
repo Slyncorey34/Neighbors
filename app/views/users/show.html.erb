@@ -1,4 +1,4 @@
-<p>howdy <%= @user.fname %>!</p>
+<p><%= @user.fname %>!</p>
 <%=image_tag @user.avatar.url(:thumb) %>
 
 <h3>What would you like to do?</h3>
@@ -12,6 +12,7 @@
 
 <b>Community Stuff</b>
 <li>Message a Neighbor</li>
+<!--ajax users.all email addresses and avatars -->
 <li>Add guests and pets</li>
 <li><%=link_to 'Make an announcement', new_post_path%></li>
 </ul>
