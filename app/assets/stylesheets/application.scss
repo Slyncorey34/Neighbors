@@ -49,10 +49,10 @@ body {
 }
 #nav_avatar img{
 	// position: absolute;
-	// display: inline-block;
+	display: inline-block;
 	border-radius: 15px;
 }
-.jumbotron {
+#jumbotron {
 	background-position: center;
 	background-image: url("../assets/Red_brick.jpg");
 	background-repeat: no-repeat;
@@ -64,19 +64,22 @@ body {
 	margin-left: -1%;
 	margin-right: -1%;
 }
-.jumbotron img {
-	background-position: absolute;
-	z-index: -1;
-}
 
-.jumbotron h1 {
+#jumbotron h1 {
 	color: #fff;
 	font-weight: bold;
 }
-#mission {
-	margin: 0 auto;
-	width: 40%;
-	padding-top: 45px;
+.mission {
+	height: 200px;
+	width: 300px;
+	margin: 40px auto;
+	display: inline-block;
+	// margin-top: 20px;
+	padding-left: 10px;
+	padding-top: 10px;
+	background-color: #333;
+	opacity: 0.9;
+	// z-index: -1;
 	color: #fff;
 }
 
