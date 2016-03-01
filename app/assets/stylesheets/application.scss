@@ -93,7 +93,7 @@ body {
 }
 
 .user_edit {
-	height: 450px;
+	height: 550px;
 	width: 70%;
 	margin: 10px auto;
 	padding-left: 10px;
@@ -124,10 +124,30 @@ body {
 	border: solid 1px #9E9E9E;
 }
 
-
-
-
-
+#avatar_update {
+	font-size: 12px;
+	padding-bottom: 40px;
+}
+#user_fields {
+	font-size: 13px;
+	margin-left: 30px;
+}
+#user_fields input {
+	padding: 10px;
+	margin: 1%;
+	width: 380px;
+}
+#field {
+	margin-left: 10px;
+}
+#submit input{
+	width: 100px;
+	background-color: #6C9A33;
+	border-radius: 20px;
+	color: #fff;
+	font-weight: bolder;
+	font-size: 13px;
+}
 
 
 
