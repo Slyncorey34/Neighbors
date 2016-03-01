@@ -1,7 +1,12 @@
-<p><%= @user.fname %>!</p>
-<%=image_tag @user.avatar.url(:thumb) %>
+<nav id="navbar">
+	<ul id="ul_navbar">
+		<div id="nav_avatar">
+	 <li><%=link_to image_tag(@user.avatar.url(:thumb)), edit_user_path %></li>
+	</div>
+	</ul>
+</nav><p><%= @user.fname %>!</p>
 
-<h3>What would you like to do?</h3>
+
 <ul>
 <b>Home Stuff</b>
 <li>Pay rent</li>

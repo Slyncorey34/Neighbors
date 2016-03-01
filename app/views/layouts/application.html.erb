@@ -9,10 +9,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-   <title>NeighborsApp</title>
+   <title>Stooper</title>
 </head>
-<!-- <div class="container-FLUID"> -->
-    <!-- application navbar  -->
+<% if flash[:alert] %>
+      <div class="flashes">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
      <%= yield%>
 
 
