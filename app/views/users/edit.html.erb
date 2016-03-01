@@ -8,17 +8,17 @@
 </nav>
 <div class="user_edit">
 	<div id="fields_top">
-		<p>Update your public profile.</p>
+		<p>Update your public profile</p>
 	</div>
 	<div id="user_avatar">
 		<%=image_tag @user.avatar.url(:medium) %>
 	</div>
 	<div id="avatar_update">
 		<%=form_for @user, method: :patch do |f| %>
-		<%#=f.label :change_photo%>
 		<%=f.file_field :avatar%>
-		<br>
-		<%=f.submit "Upload new photo"%>
+		<div id="new_pic">
+			<%=f.submit "Upload new photo"%>
+		</div>
 		<%end%>
 	</div>
 	<div id="user_fields">
