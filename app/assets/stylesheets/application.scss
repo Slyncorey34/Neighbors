@@ -202,7 +202,7 @@ h3 {
 #wrapper {
 	border: 2px solid #F5F5F5;
 	width: 80%;
-	height: 400px;
+	height: auto;
 	margin: 20px auto;
 }
 #table_1 {
@@ -239,7 +239,7 @@ h3 {
 	display: inline-block;
 	li {
 		list-style-type: none;
-		padding: 15px;
+		padding: 10px;
 		color: #424242;
 	}
 	a {
@@ -256,6 +256,13 @@ h3 {
 	margin: 5px;
 	border-radius: 5px;
 	}
+#detail {
+	font-size: 11px;
+	display: inline;
+	margin-left: 10px;
+	color: #B0BEC5;
+
+}	
 // .login-form {
 // 	width: 40%;
 // 	height: 170px;

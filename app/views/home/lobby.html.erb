@@ -27,7 +27,9 @@
 		<% @post.each do |post|%>
 		<div id="select">
 		<li><%= link_to post.title, post_path(post) %></li>
-		<%=post.user.fname%>
+		<div id="detail">
+			<%=post.user.fname%> <%= l Time.now, :format => "%m-%d-%Y"%>
+		</div>
 		</div>
 		<%end%>
 	</div>
