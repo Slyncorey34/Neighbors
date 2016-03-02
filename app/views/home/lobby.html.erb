@@ -1,6 +1,17 @@
-<h2>This is the lobby</h2>
-<!-- Show avatar here instead of name, click to see user show page -->
-<p>welcome <%=current_user.fname%></p>
+<nav id="navbar">
+	<ul id="ul_navbar">
+		<div id="logo">		
+		<img src="../assets/hand.png" height="24px" width="24px">
+		
+		<h3>Stooper</h3>
+		</div>
+		<div id="nav_avatar">
+	 		<li><%=image_tag @user.avatar.url(:thumb) %></li>
+	 	</div>
+
+	</ul>
+</nav>
+<!-- <p>welcome <%=current_user.fname%></p> -->
 <%=link_to 'Profile', user_path(current_user.id) %>
 <ul>
 	<li>Current Work</li>
@@ -14,8 +25,8 @@
 	<div class="lobby-posts">
 	
 		<% @post.each do |post|%>
-		<%=post.title%>
-		(<%=post.user.fname%>)
+		<td><%=post.title%></td>
+		<td>(<%=post.user.fname%>)</td>
 		<br>
 		<%end%>
 	</div>

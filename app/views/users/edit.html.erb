@@ -1,25 +1,49 @@
-<p>Edit Your Profile</p>
-<%=image_tag @user.avatar.url(:medium) %>
-<%=form_for @user, method: :patch do |f| %>
-<%=f.label :change_photo%>
-<%=f.file_field :avatar%>
-<%=f.submit "Update photo"%>
-<%end%>
-
-<div class="update-form">
-		<%=form_for @user, method: :patch do |f|%>	
-		<%=f.label :first_name %>
-		<%=f.text_field :fname%>
-		<br>
-		<%=f.label :email%>
-		<%=f.text_field :email%>
-		<br>
-		<%=f.label :password%>
-		<%=f.password_field :password%> 
-		<br>
-		<%=f.submit "Update"%> 
+<nav id="navbar">
+	<ul id="ul_navbar">
+		<div id="nav_avatar">
+	 		<li>Stooper</li>
+	 	</div>
+	 	<!-- <li>Stooper</li> -->
+	</ul>
+</nav>
+<div class="user_edit">
+	<div id="fields_top">
+		<p>Update your public profile</p>
+	</div>
+	<div id="user_avatar">
+		<%=image_tag @user.avatar.url(:medium) %>
+	</div>
+	<div id="avatar_update">
+		<%=form_for @user, method: :patch do |f| %>
+		<%=f.file_field :avatar%>
+		<div id="new_pic">
+			<%=f.submit "Upload new photo"%>
+		</div>
 		<%end%>
 	</div>
+	<div id="user_fields">
+		<%=form_for @user, method: :patch do |f|%>	
+		<div id="field">
+		<%=f.label :first_name %>
+		</div>
+		<%=f.text_field :fname%>
+		<div id="field">
+		<%=f.label :email%>
+		</div>
+		<%=f.text_field :email%>
+		<div id="field">
+		<%=f.label :password%>
+		</div>
+		<%=f.password_field :password%> 
+		<br>
+		<div id="submit">
+		<%=f.submit "Save"%>
+		</div> 
+		<%end%>
+	</div>
+	</div>
+</div>
+	<br>
 	<%=link_to "Log Out", logout_path%>
 	<br>
 	<%=link_to "Profile", user_path(@user)%>

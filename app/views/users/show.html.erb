@@ -1,7 +1,13 @@
-<p>howdy <%= @user.fname %>!</p>
-<%=image_tag @user.avatar.url(:thumb) %>
+<nav id="navbar">
+	<ul id="ul_navbar">
+		<div id="nav_avatar">
+	 		<li><%= @user.fname %> <%=link_to image_tag(@user.avatar.url(:thumb)), edit_user_path %></li>
+	 	</div>
+	 	<!-- <li>Stooper</li> -->
+	</ul>
+</nav>
 
-<h3>What would you like to do?</h3>
+
 <ul>
 <b>Home Stuff</b>
 <li>Pay rent</li>
@@ -12,6 +18,7 @@
 
 <b>Community Stuff</b>
 <li>Message a Neighbor</li>
+<!--ajax users.all email addresses and avatars -->
 <li>Add guests and pets</li>
 <li><%=link_to 'Make an announcement', new_post_path%></li>
 </ul>

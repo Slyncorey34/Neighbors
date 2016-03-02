@@ -9,19 +9,20 @@ class UnitsController < ApplicationController
     if @user.admin == true
     @unit = Unit.find(params[:id])
     # end
-    # # respond_to do |format|
-    # #   format.html
-    #   format.pdf do
-    #     @example_text = "some text"
-    #     render pdf: "file_name",
-    #     :template => 'units/lease_show.pdf.erb',
-    #     :layout => 'pdf',
-    #     :footer => {
-    #       :center => "Center",
-    #       :left => "Left",
-    #       :right => "Right"
-    #     }   # Excluding ".pdf" extension.
-    #   end
+    respond_to do |format|
+      format.html
+      format.pdf do
+        # @example_text = "some text"
+        render :pdf => "file_name.pdf",
+        :template => 'layouts/lease_layout_print.html.erb',
+        :layout => '',
+        :footer => {
+          :center => "Center",
+          :left => "Left",
+          :right => "Right"
+        }   # Excluding ".pdf" extension.
+      end
+      end
     end
   end
 

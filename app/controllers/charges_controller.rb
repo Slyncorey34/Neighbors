@@ -20,7 +20,9 @@ class ChargesController < ApplicationController
   	flash[ :error] = e.message
   	redirect_to new_charge_path
   end
- end
 
+  def show
+  history = Stripe::BalanceTransaction.all(:limit => 6)
+  end
 
-
+end
