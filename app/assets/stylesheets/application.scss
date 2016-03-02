@@ -161,7 +161,7 @@ h3 {
  p {
 	padding: 5px;
 	margin-left: 15px;
-}
+	}
 }
 #user_avatar {
 	margin-top: 10px;
@@ -202,14 +202,22 @@ h3 {
 #wrapper {
 	border: 2px solid #F5F5F5;
 	width: 80%;
-	height: auto;
+	height: 550px;
 	margin: 20px auto;
+}
+#wrapper_text {
+	width: 80%;
+	margin-left: 2%;
+	font-size: 12px;
+	h4 {
+		font-size: 16px;
+	}
 }
 #table_1 {
 	margin-top: 15px;
 	margin-left: 2%;
 	width: 20%;
-	height: 300px;
+	height: auto;
 	float: left;
 	font-size: 14px;
 	font-weight: medium;
@@ -261,7 +269,19 @@ h3 {
 	display: inline;
 	margin-left: 10px;
 	color: #B0BEC5;
+}
 
+#payment {
+
+}
+#work_field input{
+	margin: 5px;
+	font-size: 11px;
+}
+#note_field input {
+	width: 300px;
+	height: 150px;
+	border: 1px solid #F5F5F5;
 }	
 // .login-form {
 // 	width: 40%;
@@ -275,9 +295,7 @@ h3 {
 // 	margin: 12px;
 // }
 
-h2 {
-	font-weight: bolder;	
-}
+
 
 // .footer li{
 // 	padding-top: 20px;
