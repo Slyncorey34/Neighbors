@@ -6,29 +6,31 @@
 		<h3>Stooper</h3>
 		</div>
 		<div id="nav_avatar">
-	 		<li><%=image_tag @user.avatar.url(:thumb) %></li>
+	 		<li>welcome <%=current_user.fname%>! <%=image_tag @user.avatar.url(:thumb) %></li>
 	 	</div>
 
 	</ul>
 </nav>
 <!-- <p>welcome <%=current_user.fname%></p> -->
-<%=link_to 'Profile', user_path(current_user.id) %>
-<ul>
-	<li>Current Work</li>
-	<li>Planned work</li>
-	<li>Events Calendar</li>
-	<li>Bulletin Board</li>
-</ul>
-
-<div class="lobby-work">
+<div id="wrapper">
+	<div id="table_1">
+		<ul>
+			<li><%=link_to 'Profile', user_path(current_user.id) %></li>
+			<li>Current Work</li>
+			<li>Planned work</li>
+			<li>Events Calendar</li>
+			<li>Bulletin Board</li>
+		</ul>
 	</div>
-	<div class="lobby-posts">
-	
+	<!-- <div class="lobby-posts"> -->
+		<div id="table_2">
 		<% @post.each do |post|%>
-		<td><%=post.title%></td>
-		<td>(<%=post.user.fname%>)</td>
-		<br>
+		<div id="select">
+		<li><%= link_to post.title, post_path(post) %></li>
+		<%=post.user.fname%>
+		</div>
 		<%end%>
 	</div>
+</div>
 <%#=link_to 'Documents', docs_path%>
 <%=link_to 'Log out', logout_path%>

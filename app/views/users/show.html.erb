@@ -6,7 +6,7 @@
 		<h3>Stooper</h3>
 		</div>
 		<div id="nav_avatar">
-	 		<li><%=image_tag @user.avatar.url(:thumb) %></li>
+	 		<li>welcome <%=current_user.fname%>!<%=image_tag @user.avatar.url(:thumb) %></li>
 	 	</div>
 
 	</ul>
