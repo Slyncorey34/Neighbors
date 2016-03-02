@@ -193,9 +193,63 @@ h3 {
 	font-weight: bolder;
 	font-size: 13px;
 }
+#wrapper {
+	border: 2px solid #F5F5F5;
+	width: 80%;
+	height: 400px;
+	margin: 20px auto;
+}
+#table_1 {
+	margin-top: 15px;
+	margin-left: 2%;
+	width: 20%;
+	height: 300px;
+	float: left;
+	font-size: 14px;
+	font-weight: medium;
+	border: 1px solid #F5F5F5;
+	background-color: #F5F5F5;	
+	li {
+		list-style-type: none;
+		padding: 10px;
+		color: #424242;
+	}
+	a {
+		text-decoration: none;
+		color: #424242;
+	}
+	a:hover {
+		color: #1565C0;
+		font-weight: bolder;
+	}
+	
+}
 
-
-
+#table_2 {
+	width: 70%;
+	height: 200px;
+	margin-top: 15px;
+	margin-left: 3%;
+	display: inline-block;
+	li {
+		list-style-type: none;
+		padding: 15px;
+		color: #424242;
+	}
+	a {
+		text-decoration: none;
+		color: #424242;
+	}
+	a:hover {
+		color: #1565C0;
+		font-weight: bolder;
+	}
+}
+#select {
+	border: 1px solid #ECEFF1;
+	margin: 5px;
+	border-radius: 5px;
+	}
 // .login-form {
 // 	width: 40%;
 // 	height: 170px;
