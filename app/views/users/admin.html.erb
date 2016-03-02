@@ -1,8 +1,44 @@
-<p>Admin's page!</p>
-<!-- render a list of users and their units -->
-<%= link_to 'All Tenants', users_path%>
-<!-- Dcouments
-Payments -->
-<%=link_to 'Make an announcement', new_post_path%>
-<br>
+<nav id="navbar">
+	<ul id="ul_navbar_admin">
+		<div id="logo">		
+		<img src="../assets/hand.png" height="24px" width="24px">
+		<h3>Stooper</h3>
+		</div>
+		<li>Lobby</li>
+		<li>Work Orders</li>
+		<div id="nav_avatar">
+	 		<li><%=current_user.fname%> is logged in <%=image_tag @user.avatar.url(:thumb) %></li>
+	 	</div>
+	</ul>
+</nav>
+<div id="wrapper">
+	<div id="admin_row_1">
+		<div id="box">
+		<img src="../assets/neighbors.png" height="90" width="90">
+		<!-- <p>People</p>
+		<p>View your tenant directory and send messages.</p> -->
+		</div>
+		<div id="box">
+		<img src="../assets/credit-cards-payment.png" height="90" width="90">
+		</div>
+		<div id="box">
+		<img src="../assets/posts.png"height="90" width="90">
+		</div>
+		<%#= link_to 'All Tenants', users_path%>
+		<!-- Stripe Dashboard -->
+		<%#=link_to 'Make an announcement', new_post_path%>
+	</div>
+
+	<div id="admin_row_2">
+		<div id= "box">
+		<img src="../assets/docs.png" height="90" width="90">
+	</div>
+	<div id="box">
+		<img src="../assets/hammer.png" height="90" width="90">
+		</div>
+		<div id="box">
+		<img src="../assets/support.png" height="90" width="90">
+	</div>
+</div>
+</div>
 <%=link_to 'Log out', logout_path%>
