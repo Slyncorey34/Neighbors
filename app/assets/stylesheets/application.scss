@@ -63,14 +63,20 @@ body {
 	width: 150px; 
 	img {
 	float: left;
-	padding: 8px;
+	padding: 12px;
+	height: 24px;
+	width: 24px;
 	}
-}
-
-h3 {
+	h3 {
 	color: #fff;
 	display: inline-block;
+	}
 }
+.icon {
+	width: 128px;
+	height: 128px;
+}
+
 #nav_avatar {
 	float: right;
 	margin-left: 80%;
@@ -130,8 +136,7 @@ h3 {
 		}
 	a:hover {
 		color: #CDDC39;
-
-	}
+		}
 	}
 }
 #form {
@@ -302,7 +307,7 @@ h3 {
 	// margin-top: 20px;
 }
 #box {
-	font-size: 12px;
+	font-size: 14px;
 	height: 220px;
 	width: 190px;
 	display: inline-block;
@@ -315,10 +320,6 @@ h3 {
 	
 }
 
-.box_icon {
-	height: 90px;
-	width: 90px;
-}	
 // .login-form {
 // 	width: 40%;
 // 	height: 170px;
