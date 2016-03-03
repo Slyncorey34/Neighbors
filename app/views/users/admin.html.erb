@@ -4,13 +4,12 @@
 		<img src="../assets/hand.png" height="24px" width="24px">
 		<h3>Stooper</h3>
 		</div>
-		<div id="nav_strip">
-		<li>Lobby</li>
-		<li>Work Orders</li>
-	</div>
 		<div id="nav_avatar">
-	 		<li><%=current_user.fname%> is logged in <%=image_tag @user.avatar.url(:thumb) %></li>
+	 		<li><%#=current_user.fname%> <%=image_tag @user.avatar.url(:thumb) %></li>
 	 	</div>
+	 		<div class="nav_logout">
+    <h5><%=link_to "Profile", user_path(@user)%> <%=link_to "Log Out", logout_path%></h5>
+  	</div>
 	</ul>
 </nav>
 <div id="wrapper_admin">

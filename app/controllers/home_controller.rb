@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def welcome
+    # render :template => "home/welcome"
   end
 
   def lobby

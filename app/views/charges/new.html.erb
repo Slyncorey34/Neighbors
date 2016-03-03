@@ -12,6 +12,7 @@
 <div id="wrapper">
   <div id="pay_1">
     <iframe src="../assets/ny_lease.pdf"></iframe>
+  <!-- <a href="View"</a> -->
   </div>
   <div id="pay_2">
     <%= form_tag charges_path do %>
@@ -24,9 +25,12 @@
         </div>
       <% end %>
       <div id="late_pay">
-      <p><span style="color:red">PLEASE NOTE:</span> Late payments will be subject to a $50.00 late fee.</p>
+      <p>
+        <span style="color:red">PLEASE NOTE:</span> Late payments will be subject to a $50.00 late fee.
+      </p>
       </div> 
       <label class="amount">
+        <p><%= l Time.now, :format => "%B %Y"%> rent</p>
         <span>Amount: $1500.00</span>
       </label>
     </article>
