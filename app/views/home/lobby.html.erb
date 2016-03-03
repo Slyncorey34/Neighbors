@@ -28,6 +28,7 @@
 		<div id="select">
 		<li><%= link_to post.title, post_path(post) %></li>
 		<div id="detail">
+			<!-- ADD RUBY FOR CONDITIONAL COLORING OF ADMIN'S POSTS -->
 			<%=post.user.fname%> <%= l Time.now, :format => "%m-%d-%Y"%>
 		</div>
 		</div>

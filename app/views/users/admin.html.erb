@@ -4,14 +4,16 @@
 		<img src="../assets/hand.png" height="24px" width="24px">
 		<h3>Stooper</h3>
 		</div>
+		<div id="nav_strip">
 		<li>Lobby</li>
 		<li>Work Orders</li>
+	</div>
 		<div id="nav_avatar">
 	 		<li><%=current_user.fname%> is logged in <%=image_tag @user.avatar.url(:thumb) %></li>
 	 	</div>
 	</ul>
 </nav>
-<div id="wrapper">
+<div id="wrapper_admin">
 	<div id="admin_row_1">
 		<div id="box">
 		<a href="/users"> <img src= "../assets/neighbors.png" width="90" height="90"></a>
