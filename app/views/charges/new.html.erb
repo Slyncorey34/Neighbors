@@ -1,22 +1,48 @@
-<h4>Charges#new</h4>
-<p>Checkout Page</p>
-
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
-
+<nav id="navbar">
+  <ul id="ul_navbar">
+    <div id="logo">   
+    <img src="../assets/hand.png" height="24px" width="24px">
+    <h3>Stooper</h3>
+    </div>
+    <div id="nav_avatar">
+    <%#= image_tag current_user.avatar.url(:thumb) %>
+    </div>
+  </ul>
+</nav>
+<div id="wrapper">
+  <div id="pay_1">
+    <iframe src="../assets/ny_lease.pdf"></iframe>
+  <!-- <a href="View"</a> -->
+  </div>
+  <div id="pay_2">
+    <%= form_tag charges_path do %>
+      <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p> 
+            <%= flash[:error] %>
+          </p>
+        </div>
+      <% end %>
+      <div id="late_pay">
+      <p>
+        <span style="color:red">PLEASE NOTE:</span> Late payments will be subject to a $50.00 late fee.
+      </p>
+      </div> 
+      <label class="amount">
+        <p><%= l Time.now, :format => "%B %Y"%> rent</p>
+        <span>Amount: $1500.00</span>
+      </label>
+    </article>
+   <br>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="1 month's rent"
-          data-amount="500"
+          data-name= "Stooper"
+          data-image= "../assets/hand_blue.png" class="icon"
+          data-description= " <%= l Time.now, :format => "%B %Y"%> Rent for <%= current_user.fname %>"
+          data-amount="150000"
           data-locale="auto">
   </script>
-<% end %>
+  <% end %>
+  </div>
+</div> 

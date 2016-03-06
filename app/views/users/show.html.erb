@@ -1,29 +1,45 @@
 <nav id="navbar">
 	<ul id="ul_navbar">
+		<div id="logo">		
+		<img src="../assets/hand.png" height="24px" width="24px">
+		
+		<h3>Stooper</h3>
+		</div>
 		<div id="nav_avatar">
-	 		<li><%= @user.fname %> <%=link_to image_tag(@user.avatar.url(:thumb)), edit_user_path %></li>
+	 		<li>welcome <%=current_user.fname%>!<%=image_tag @user.avatar.url(:thumb) %></li>
 	 	</div>
-	 	<!-- <li>Stooper</li> -->
+
 	</ul>
 </nav>
+<div id="wrapper">
+	<div id="table_1">
+		<!-- <b>Home Stuff</b> -->
+		<ul>
+		<li><%=link_to 'Pay rent', charges_new_path%></li>
+		<li><%=link_to 'Submit a maintenance request', new_user_unit_job_path(@user.id, @user.unit.id) %></li>
+		<li>View building documents and resources</li>
+		</ul>
+	</div>
 
-
-<ul>
-<b>Home Stuff</b>
-<li>Pay rent</li>
-<li><%=link_to 'Submit a maintenance request', new_user_unit_job_path(@user.id, @user.unit.id) %></li>
-
-<li>View building documents and resources</li>
+	<div id="table_2">
+		<ul>
+			<div id="select">
+			<li>Message a Neighbor</li>
+			</div>
+			<!--ajax users.all email addresses and avatars -->
+			<div id="select">
+			<li><%=link_to 'Edit your account', edit_user_path%></li>
+			</div>
+			<div id="select">
+			<li><%=link_to 'Make an announcement', new_post_path%></li>
+			</div>
+			<div id="select">
+			<li><%=link_to 'Visit the Lobby', lobby_path%></li>
+			</div>
+		</ul>
+	</div>
+</div>
 <br>
 
-<b>Community Stuff</b>
-<li>Message a Neighbor</li>
-<!--ajax users.all email addresses and avatars -->
-<li>Add guests and pets</li>
-<li><%=link_to 'Make an announcement', new_post_path%></li>
-</ul>
-
-<p><%=link_to 'Edit your account', edit_user_path%></p>
 <%=link_to 'Log out', logout_path%>
-<br>
-<%=link_to 'Lobby', lobby_path%>
+

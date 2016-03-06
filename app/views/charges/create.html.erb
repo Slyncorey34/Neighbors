@@ -1,2 +1,15 @@
-<h1>Charges#create</h1>
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+<nav id="navbar">
+  <ul id="ul_navbar">
+    <div id="logo">   
+    <img src="../assets/hand.png" height="24px" width="24px">
+    <h3>Stooper</h3>
+    </div>
+    <div id="nav_avatar">
+    <%= image_tag current_user.avatar.url(:thumb) %>
+    </div>
+  </ul>
+</nav>
+<div id="pay_confirm">
+<p>Thank you <%= current_user.fname %>! Your <%= l Time.now, :format => "%B"%> rent has been received.</p>
+
+</div>

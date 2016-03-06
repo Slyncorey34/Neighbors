@@ -2,7 +2,7 @@ class User <ActiveRecord::Base
 	has_many :posts
 	has_many :jobs
 	has_one :unit
-    has_attached_file :avatar, :styles => { thumb: "80x80>", medium: "200x200>"}, :default_url => "/images/:style/missing.png" 
+    has_attached_file :avatar, :styles => { thumb: "80x80>", medium: "100x100>"}, :default_url => "/images/:style/missing.png" 
     validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 	attr_accessor :password
 
