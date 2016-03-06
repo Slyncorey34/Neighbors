@@ -17,14 +17,17 @@ body {
 	font-family: 'Arial', sans-serif;
 	color: #424242;
 }
-// #body_1 {
-//    background: url("../assets/Red_brick.jpg") no-repeat center center fixed; 
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-// 	text-align: center;
-	
+#jumbotron{
+   background: url("../assets/Red_brick.jpg") center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	text-align: center;
+	margin-left: -1%;
+	margin-right: -1%;
+	margin-bottom: -1%;
+}	
 
 .flashes {
 	color: 	#B22222;
@@ -123,25 +126,13 @@ body {
 		font-size: 11px;
 	}
 }
-// #container {
-// 	// background-image: url("../assets/Red_brick.jpg");
-	
-//   background: url("../assets/stoop_kids.jpg") no-repeat center center fixed; 
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-
-
-// 	// background-repeat: no-repeat;
-// 	// height: 100%;
-// 	// height: 75vh;
-// 	text-align: center;
-// 	// margin: 0;
-// 	// margin-top: -1%;
-// 	// margin-left: -1%;
-// 	// margin-right: -1%;
-// }
+#home_text {
+	margin: 20px auto;
+	margin-left: 10px;
+	p {
+		width: 90%;
+	}
+}
 
 .mission {
 	height: 170px;
@@ -347,22 +338,29 @@ body {
 	width: 80%;
 	margin: 0 auto;
 	margin-top: 20px;
-	margin-left: 15px;
+	margin-left: 100px;
 	// margin-top: 20px;
+}
+#admin_row_2 {
+	height: 40%;
+	width: 80%;
+	// margin: 0 auto;
+	margin-left: 100px;
 }
 #box {
 	font-size: 14px;
-	font-weight: bolder;
+	font-weight: medium;
 	height: 220px;
-	width: 200px;
+	width: 180px;
 	display: inline-block;
-	margin-left: 10px;
-	border: 1px solid #F5F5F5;
+	margin-left: 5px;
+	
 	img {
 		padding-top: 5px;
 		margin-left: 20%;
 	}	
 }
+
 
 #pay_1 {
 	// width: 30%;

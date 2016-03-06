@@ -1,28 +1,15 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Ruby 2.3.0
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Payments are managed and documented by the Stripe API and Checkout form through the "Charges" controller: https://stripe.com/docs/checkout/rails
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Postgres database 
+
+* Stooper is designed to foster community, create transparency, and increase efficiency between building tenants and managers. 
+
+* Users (by default, tenants) can create posts and work orders, view/download documents, and pay rent. 
+
+* Users must select a unit upon sign up. Units are hard coded in the seed file. All work orders are associated with the user's unit.
