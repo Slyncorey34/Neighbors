@@ -1,14 +1,7 @@
-<nav id="navbar">
-  <ul id="ul_navbar">
-    <div id="logo">   
-    <img src="../assets/hand.png" height="24px" width="24px">
-    <h3>Stooper</h3>
-    </div>
+<!-- ADD TEXT TO HEADER -->
+<!-- ADD IMAGE OR SOMETHING ON THE SIDES -->
     <h2><span style="color:white">Welcome to 90 John Street!</span></h2>
-  </ul>
-</nav>
-
-<div id="form">
+ <div id="form">
 	<%=form_for @user do |f| %>
 	<%=f.label :apartment%>
 	<br>
@@ -27,7 +20,8 @@
 	<br>
 	<%=f.password_field :password %>
 	<br>
-	<%=f.label :Your_photo%><p>(optional)</p>
+	<%=f.label :Your_photo%>
+		<p>(optional)</p>
 	<%=f.file_field :avatar%>
 	<%=f.submit "Create Account" %>
 	<%end%>

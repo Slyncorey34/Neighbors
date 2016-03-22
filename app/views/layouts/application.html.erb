@@ -4,8 +4,7 @@
 <head>
     <meta charset='utf-8'/>
     
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -18,14 +17,18 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
+    <nav id="navbar">
+  <ul id="ul_navbar">
+    <!-- <div id="logo-home"> -->
+    <img src="../assets/stooper.png" height="35px" width="100px">
+    <!-- </div> -->
+  </ul>
+</nav>
      <%= yield%>
-
-
-<!-- <div class="footer">
-  <li>FAQs</li>
-  <li>About</li>
-  <li>Contact</li>
-  </div> -->
+  <div id="footer">
+  <%=link_to 'Log out', logout_path%>
+  <!-- ADD TEXT ABOUT COPYRIGHT OR FAQ OR FIGURE OUT FOOTER -->
+</div>
   </div>
 </body>
 </html> 
